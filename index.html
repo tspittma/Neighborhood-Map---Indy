@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Neighborhood Map</title>
+
+        <!-- css imports-->
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="css/lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="hamMenu menu-hidden" data-bind="click: toggleNav">
+            <p data-bind="text: menuState">Menu</p>
+        </div>
+        <nav id="nav" data-bind="style: { left: navHidden() ? '-150px' : '0px' }">
+            <h1>yummy restaurants of indy (indianapolis, in)</h1>
+            <div id="search">
+                <hr>
+                <span class="fa fa-filter" aria-hidden="true" data-bind="click: showInputBox"></span>
+                <input id="search-filter" placeholder="FILTER" data-bind="textInput: placeListFilter">
+                <br>
+                <center><img src="img/indy-hoosier.png" alt="Indiana Hoosier State"></center>
+            </div>
+
+            <ul data-bind="foreach: visiblePlaceList">
+                <li class="loc-item" data-bind="text: name, click: $parent.setHighlightedPlace"></li>
+            </ul>
+        </nav>
+        <main id="map"></main>
+
+        <div id="placeInfo" class="hidden">
+            <div id="infoFound" data-bind="if: apiSuccess">
+                <h2 data-bind="text: highlightedPlaceName"></h2>
+                <h3 id="exitPlaceInfo" data-bind="click: removeHighlightedPlace">Close</h3>
+                <div class="half-box">
+                    <p data-bind="text: highlightedPlaceAddress"></p>
+                    <p data-bind="text: highlightedPlacePhone"></p>
+                </div>
+                <div class="half-box">
+                    <p><span data-bind="text: highlightedPlaceCheckins"></span> Checkins</p>
+                    <p><span data-bind="text: highlightedPlaceUsers"></span> Users</p>
+                </div>
+                <p class="half-box"><a id="menuLink" data-bind="visible: highlightedPlaceMenuLink, attr: {href: highlightedPlaceMenuLink}" target="_blank">Link to menu</a></p>
+                <div id="imageBox">
+                    <a data-bind="attr: {href: highlightedPlaceVenueLink}" target="_blank"><img src="img/powered-by-foursquare.png" alt="Powered by Foursquare"></a>
+                </div>
+            </div>
+            <div id="infoError" data-bind="ifnot: apiSuccess">
+                <h1>Unable to retrieve location information for <span data-bind="text: highlightedPlace().name"></span>.</h1>
+            </div>
+        </div>
+
+        <script src="js/lib/knockout-3.4.2.js"></script>
+        <script src="js/lib/jquery-3.2.1.min.js"></script>
+        <script src="js/place.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=init&key=AIzaSyA5ebPkqVjByODtJ-sYWFTFS_aW6s2Rf44" onerror="init('error')" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,186 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: 'Calibri', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    color: #ffffff;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-weight: 80;
+    font-size: 1.5em;
+    margin-bottom: 20%;
+}
+
+nav {
+    width: calc(20% - 10px);
+    background-color: #990000;
+    padding: 5px;
+    height: 100%
+}
+
+#map {
+    height: 100%;
+    width: 80%;
+}
+
+
+ul {
+    list-style-type: none;
+    padding-left: 5px;
+    margin-top: 20px;
+}
+
+li {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.loc-item:hover {
+    background-color: #000000;
+    cursor: pointer;
+}
+
+#search-filter {
+    height: 10%;
+    width: 80%;
+    margin-left: 10px;
+    margin-bottom: 20%;
+
+}
+
+#search {
+    margin-bottom: 20%;
+}
+
+#placeInfo {
+    height: 35%;
+    width: calc(50% - 10px);
+    padding-left: 10px;
+    position: relative;
+    right: -33%;
+    bottom: 35%;
+    transition: bottom .2s ease-out;
+    background-color: #990000;
+}
+
+#infoFound {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#placeInfo.hidden {
+    bottom: 0%;
+}
+
+#exitPlaceInfo {
+    font-weight: 100;
+    width: 20%;
+}
+
+h2 {
+    width: 80%;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.half-box {
+    width: 50%;
+}
+
+#menuLink {
+    color: #ffff00;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+#menuLink:hover {
+    opacity: .8;
+}
+
+img {
+    max-width: 100%;
+}
+
+#imageBox {
+    width: 35%;
+}
+
+#hamMenu {
+    display: none;
+}
+
+.fa-filter {
+    width: 5%;
+}
+
+.menu-hidden {
+    display: none;
+}
+
+@media screen and (min-width: 720px) and (max-width: 935px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    li {
+        font-size: 1em;
+    }
+
+    #exitPlaceInfo {
+        font-size: 1.25em;
+    }
+}
+
+@media screen and (max-width: 719px) {
+    nav {
+        padding-top: 60px;
+        left: -150px;
+        width: 140px;
+        position: absolute;
+        z-index: 2;
+    }
+
+    h1, li {
+        font-size: 1em;
+    }
+
+    #map {
+        width: 100%;
+    }
+
+    body {
+        display: block;
+    }
+
+    #placeInfo.hidden {
+        bottom: -12%;
+    }
+
+    #placeInfo {
+        width: 66%;
+        right: -150px;
+        bottom: 33%;
+        font-size: 1em;
+    }
+
+    .hamMenu {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        display: block;
+        z-index: 4;
+        background-color: #0E3B43;
+    }
+
+    h2 {
+        font-size: 1.25em;
+    }
+}
