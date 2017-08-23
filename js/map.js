@@ -1,7 +1,9 @@
-// var apiKey = 'AIzaSyAlBvvWTlQmn-wLFl0bM6JVS3SRp-gCwQg';
+// My Unique Google Map Key
+// var apiKey = 'AIzaSyA5ebPkqVjByODtJ-sYWFTFS_aW6s2Rf44';
 
-// Creates Google Map object, sets center, and returns it
-// Code based on Google Maps API documentation
+// Google Map object creation
+// Display set is center
+// Code based on Google Maps API documentation for Indianapolis neighborhood
 function initMap() {
 
     var map;
@@ -9,18 +11,14 @@ function initMap() {
     var indy = new google.maps.LatLng(39.634053, -86.121570);
 
     // Create the map and zoom in
-    // Positioning code from Google Maps Control Positioning documentation
+    // Code based on Google Maps lat/lng object literal and controls documentation
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
-        center: indy,
-        mapTypeControl: true,
-        mapTypeControlOptions: {
-            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-            position: google.maps.ControlPosition.TOP_CENTER
-        }
+        center: {lat: -86, lng: 39},
+        disableDefaultUI: true
     });
 
-    // Re-center map when the div is resized
+    // Re-center map upon resizing
     map.addListener('resize', function () {
         map.setCenter(indy);
     });
@@ -28,15 +26,15 @@ function initMap() {
     return map;
 }
 
-// Returns a LatLng that is the average of a list of markers
-function getCenter(placeList) {
+// Returns the average of a markers for placess
+function getCenter(indyLocations) {
 
     var lat = 0;
     var lng = 0;
 
-    var size = placeList.length;
+    var size = indyLocations.length;
 
-    placeList.forEach(function (place) {
+    indyLocations.forEach(function (place) {
         lat += place.marker.position.lat();
         lng += place.marker.position.lng();
     });

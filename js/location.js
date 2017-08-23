@@ -1,4 +1,6 @@
-var placeList = [
+// Yummy food places in Indianapolis, IN
+
+var indyLocations = [
     {
         name: 'BJs Restaurant and Brewhouse',
         location: {

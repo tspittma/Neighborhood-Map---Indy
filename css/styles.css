@@ -10,12 +10,12 @@ body {
     flex-wrap: wrap;
     color: #ffffff;
     overflow: hidden;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 h1 {
-    font-weight: 80;
-    font-size: 1.5em;
+    font-size: 1.5vw;
+    font-weight: normal;
     margin-bottom: 20%;
 }
 
@@ -24,6 +24,7 @@ nav {
     background-color: #990000;
     padding: 5px;
     height: 100%
+    overflow-y: auto;
 }
 
 #map {
@@ -39,11 +40,11 @@ ul {
 }
 
 li {
-    font-size: 1.4em;
+    font-size: 1.4vw;
     margin-bottom: 20px;
 }
 
-.loc-item:hover {
+.indyFood:hover {
     background-color: #000000;
     cursor: pointer;
 }
@@ -52,8 +53,8 @@ li {
     height: 10%;
     width: 80%;
     margin-left: 10px;
-    margin-bottom: 20%;
-
+    margin-bottom: 8%;
+    margin-top: 20px;
 }
 
 #search {
@@ -67,11 +68,11 @@ li {
     position: relative;
     right: -33%;
     bottom: 35%;
-    transition: bottom .2s ease-out;
+    transition: bottom .5s linear;
     background-color: #990000;
 }
 
-#infoFound {
+#getIndy {
     display: flex;
     flex-wrap: wrap;
 }
@@ -80,7 +81,7 @@ li {
     bottom: 0%;
 }
 
-#exitPlaceInfo {
+#hideLocationDetails {
     font-weight: 100;
     width: 20%;
 }
@@ -91,17 +92,18 @@ h2 {
     margin-bottom: 10px;
 }
 
-.half-box {
+.pop-box {
     width: 50%;
 }
 
-#menuLink {
+#viewMenu {
     color: #ffff00;
-    text-decoration: none;
-    margin-bottom: 10px;
+    font-size: 1vw;
+    font-weight: bold;
+    margin-bottom: 20%;
 }
 
-#menuLink:hover {
+#viewMenu:hover {
     opacity: .8;
 }
 
@@ -109,16 +111,12 @@ img {
     max-width: 100%;
 }
 
-#imageBox {
+#foursquareLogo {
     width: 35%;
 }
 
 #hamMenu {
     display: none;
-}
-
-.fa-filter {
-    width: 5%;
 }
 
 .menu-hidden {
@@ -127,15 +125,16 @@ img {
 
 @media screen and (min-width: 720px) and (max-width: 935px) {
     h1 {
-        font-size: 1.5em;
+        font-size: 3vw;
+        color: #ffff00;
     }
 
     li {
-        font-size: 1em;
+        font-size: 2vw;
     }
 
-    #exitPlaceInfo {
-        font-size: 1.25em;
+    #hideLocationDetails {
+        font-size: 3vw;
     }
 }
 
@@ -149,7 +148,7 @@ img {
     }
 
     h1, li {
-        font-size: 1em;
+        font-size: 3vw;
     }
 
     #map {
@@ -168,7 +167,7 @@ img {
         width: 66%;
         right: -150px;
         bottom: 33%;
-        font-size: 1em;
+        font-size: 2.5vw;
     }
 
     .hamMenu {
@@ -181,6 +180,6 @@ img {
     }
 
     h2 {
-        font-size: 1.25em;
+        font-size: 2vw;
     }
 }
