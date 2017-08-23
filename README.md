@@ -1,12 +1,6 @@
 ## Neighborhood-Map
 *Udacity project with knockout JS framework and google maps API.
-
-## Google Key
-* AIzaSyA5ebPkqVjByODtJ-sYWFTFS_aW6s2Rf44
-
-## Foursquare Keys
-* CLIENT_ID - UEF3M4MPPV10JNBDLOM4VPOP4TBYCFE02DDJTGPN30CS1VSU
-* CLIENT_SECRET - OZU5WGRA4GONU2YNIGEF3EEZOOIK5VX34GF2WZ4K3YDGFPAB
+[link](https://tspittma.github.io/Neighborhood-Map---Indy/)
 
 ## Setup
 * Clone or [download](https://github.com/cardvark/neighborhood-map-udacity/archive/master.zip) the repo.
